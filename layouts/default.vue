@@ -1,6 +1,20 @@
 <template>
   <div>
-    <Nuxt />
+    <div class="navbar">
+      <div class="nav-links">
+        <NuxtLink to="/" class="nav-link">Deckhead</NuxtLink>
+      </div>
+      <div class="login-links">
+        <div v-if="$auth.loggedIn">
+          {{ $auth.user.email }}
+        </div>
+        <div v-else>
+          <NuxtLink to="/auth/login" class="nav-link">Login</NuxtLink>
+          <NuxtLink to="/auth/register" class="nav-link">Register</NuxtLink>
+        </div>
+      </div>
+    </div>
+    <Nuxt class="app-view" />
   </div>
 </template>
 
@@ -51,5 +65,29 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #35495e;
+  color: #fff;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+.nav-link,
+.nav-link:visited {
+  color: white;
+}
+
+.app-view {
+  padding-top: 60px;
 }
 </style>
