@@ -3,30 +3,23 @@
     <div>
       <Logo />
       <h1 class="title">Deckhead</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      <div class="content">
+        <h2>Welcome to Deckhead! <small>Your MTG collection manager</small></h2>
+        <super-secret-div v-if="$auth.loggedIn" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import SuperSecretDiv from '~/components/SuperSecretDiv.vue';
+
+export default {
+  name: 'Index',
+  components: {
+    SuperSecretDiv,
+  },
+};
 </script>
 
 <style>
@@ -44,7 +37,6 @@ export default {};
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
   letter-spacing: 1px;
 }
 

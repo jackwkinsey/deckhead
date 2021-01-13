@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbar">
+    <!-- <div class="navbar">
       <div class="nav-links">
         <NuxtLink to="/" class="nav-link">Deckhead</NuxtLink>
       </div>
@@ -13,10 +13,21 @@
           <NuxtLink to="/auth/register" class="nav-link">Register</NuxtLink>
         </div>
       </div>
-    </div>
+    </div> -->
+    <nav-bar />
     <Nuxt class="app-view" />
   </div>
 </template>
+
+<script>
+import NavBar from '~/components/NavBar.vue';
+
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
 
 <style>
 html {
