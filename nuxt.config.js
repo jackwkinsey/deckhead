@@ -1,7 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'deckhead',
+    title: 'Deckhead',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -11,7 +11,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['normalize.css', '@/assets/main.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -38,6 +38,21 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
+
+  // Nuxt Auth module configuration
+  auth: {
+    redirect: {
+      login: '/', // redirect user when not connected
+      callback: '/auth/signed-in',
+    },
+    strategies: {
+      local: false,
+      auth0: {
+        domain: process.env.AUTH0_DOMAIN,
+        client_id: process.env.AUTH0_CLIENT_ID,
+      },
+    },
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
