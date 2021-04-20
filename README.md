@@ -8,7 +8,7 @@ card collection management web application.
 - NuxtJS & Node (application architecture)
 - Vue (user interface)
 - Auth0 (user management)
-- MangoDB or FaunaDB (user storage)
+- MongoDB or FaunaDB (user storage)
 - D3.js (charts & graphs)
 - Scryfall API (MtG card data API)
 
